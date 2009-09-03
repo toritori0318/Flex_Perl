@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical">
-	 <mx:Script>
-	 <![CDATA[
+     <mx:Script>
+     <![CDATA[
         private function jsonRemoting():void {
             var _cls:JSONClient = new JSONClient(this);
             _cls.jsonRequest();
-          }
-         private function xmlRemoting():void {
+         }
+        private function xmlRemoting():void {
             var _cls:XMLClient = new XMLClient(this);
             _cls.xmlRequest();
-          }
+         }
         private function amfRemoting():void {
             var _cls:AmfClient = new AmfClient(this);
             _cls.amfRequest();
-          }
+         }
      ]]>
-	 </mx:Script>
+     </mx:Script>
     
-	 <mx:Panel title="FlexToPerl" width="100% " height="100% ">
+     <mx:Panel title="FlexToPerl" width="100% " height="100% ">
        <mx:Panel width="300">
          <mx:Label text="名前で絞りこみ" />
          <mx:TextInput id="emp_name" />
-	     <mx:HBox borderStyle="solid">
-		   <mx:Button label="JSON" click="jsonRemoting()" />
-		   <mx:Button label="XML" click="xmlRemoting()" />
-		   <mx:Button label="AMFSimple" click="amfRemoting()" />
-		   <mx:Button label="AMF3" click="" enabled="false"/>
-	     </mx:HBox>
+         <mx:HBox borderStyle="solid">
+           <mx:Button label="JSON" click="jsonRemoting()" />
+           <mx:Button label="XML" click="xmlRemoting()" />
+           <mx:Button label="AMFSimple" click="amfRemoting()" />
+           <mx:Button label="AMF3" click="" enabled="false"/>
+         </mx:HBox>
        </mx:Panel>
-		 <mx:DataGrid id="dg" width="100%" height="100%" >
-			 <mx:columns>
-			 <mx:DataGridColumn dataField="id" />
-			 <mx:DataGridColumn dataField="emp_no" />
-			 <mx:DataGridColumn dataField="emp_name" />
-			 <mx:DataGridColumn dataField="mgr_id" />
-			 <mx:DataGridColumn dataField="hiredate" />
-			 <mx:DataGridColumn dataField="sal" />
-			 <mx:DataGridColumn dataField="dept_id" />
-			 <mx:DataGridColumn dataField="version_no" />
-			 </mx:columns>
-		 </mx:DataGrid>
-		 <mx:Text id="remote_text">
-		 	
-		 </mx:Text>
-	 </mx:Panel>
+       <mx:DataGrid id="dg" width="100%" height="100%" >
+           <mx:columns>
+           <mx:DataGridColumn dataField="id" />
+           <mx:DataGridColumn dataField="emp_no" />
+           <mx:DataGridColumn dataField="emp_name" />
+           <mx:DataGridColumn dataField="mgr_id" />
+           <mx:DataGridColumn dataField="hiredate" />
+           <mx:DataGridColumn dataField="sal" />
+           <mx:DataGridColumn dataField="dept_id" />
+           <mx:DataGridColumn dataField="version_no" />
+           </mx:columns>
+       </mx:DataGrid>
+       <mx:Text id="remote_text">
+       </mx:Text>
+     </mx:Panel>
 </mx:Application>
