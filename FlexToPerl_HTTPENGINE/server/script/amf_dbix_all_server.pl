@@ -75,7 +75,7 @@ sub handler {
     }
     elsif ( $req->uri->path eq '/json' ) {
         use JSON;
-        return res( 'application/xhtml+xml', to_json( &getEmp( $qq ) ) );
+        return res( 'application/json', to_json( &getEmp( $qq ) ) );
     }
     elsif ( $req->uri->path eq '/xml' ) {
         use XML::Simple;
