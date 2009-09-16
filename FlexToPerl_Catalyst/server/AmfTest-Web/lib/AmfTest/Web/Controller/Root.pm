@@ -54,10 +54,6 @@ sub json : Local {
 
     use AmfTest::Web::Service::Emp;
     my $api = AmfTest::Web::Service::Emp->new();
-
-    #$c->log->info(Dumper($api->getEmp( $c->model('DB::Emp'), $qq )));
-    #$c->stash = [$api->getEmp( $c->model('DB::Emp'), $qq )];
-    #$c->response->body($api->getEmp( $c->model('DB::Emp'), $qq ));
     $c->stash->{response} = $api->getEmp( $c->model('DB::Emp'), $qq );
     $c->forward( $c->view('JSON') );
 }
@@ -74,19 +70,6 @@ sub xml : Local {
     my $api = AmfTest::Web::Service::Emp->new();
     $c->stash->{xml} = $api->getEmp( $c->model('DB::Emp'), $qq );
     $c->forward( $c->view('XML') );
-
-#    my $emp = $api->getEmp( $c->model('DB::Emp'), $qq );
-#    if ( @$emp > 0 ) {
-#        my $emp_rec = { record => $emp };
-#        $c->response->output(
-#            XMLout $emp_rec,
-#            RootName => 'Result',
-#            NoAttr   => 1
-#        );
-#    }
-#    else {
-#        $c->response->output("<Result><record></record></Result>");
-#    }
 }
 
 sub cnv_hash {
