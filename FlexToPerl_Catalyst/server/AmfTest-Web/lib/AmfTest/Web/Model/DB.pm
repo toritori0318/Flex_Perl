@@ -5,12 +5,6 @@ use base 'Catalyst::Model::DBIC::Schema';
 
 __PACKAGE__->config(
     schema_class => 'AmfTest::Web::Schema',
-    
-    connect_info => {
-        dsn => 'dbi:Pg:dbname=test',
-        user => 'postgres',
-        password => '',
-    }
 );
 
 =head1 NAME

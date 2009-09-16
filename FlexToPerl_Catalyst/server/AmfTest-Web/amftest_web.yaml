@@ -3,7 +3,7 @@
 name:
   - AmfTest::Web
 
-Schema:
+Model::DB:
   connect_info:
     - dbi:Pg:dbname=test
     - postgres
