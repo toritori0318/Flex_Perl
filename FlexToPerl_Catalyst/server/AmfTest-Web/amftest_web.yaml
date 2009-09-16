@@ -1,0 +1,10 @@
+# rename this file to AmfTest::Web.yml and put a ':' in front of 'name' if
+# you want to use YAML like in old versions of Catalyst
+name:
+  - AmfTest::Web
+
+Schema:
+  connect_info:
+    - dbi:Pg:dbname=test
+    - postgres
+    - 
